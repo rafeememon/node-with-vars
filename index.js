@@ -1,6 +1,7 @@
 'use strict'
 
 var spawn = require('cross-spawn-async')
+var assign = require('object-assign')
 
 function getParams (argv) {
   var command = argv._[0]
@@ -16,9 +17,19 @@ function getParams (argv) {
   return {command: command, args: args, env: env}
 }
 
+function getEnv (env) {
+  if (process.platform === 'win32') {
+    return assign({}, env, {
+      APPDATA: process.env.APPDATA
+    })
+  } else {
+    return env
+  }
+}
+
 function runParams (params, stdio) {
   return spawn(params.command, params.args, {
-    env: params.env,
+    env: getEnv(params.env),
     stdio: stdio
   })
 }
