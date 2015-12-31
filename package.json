@@ -1,0 +1,38 @@
+{
+  "name": "with-vars",
+  "version": "0.0.0",
+  "description": "Cross-platform command line tool for setting environment variables in node.js",
+  "author": {
+    "name": "Rafee Memon",
+    "email": "rafeememon@gmail.com",
+    "url": "https://github.com/rafeememon/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/rafeememon/node-with-vars.git"
+  },
+  "license": "MIT",
+  "homepage": "http://github.com/rafeememon/node-with-vars",
+  "keywords": [
+    "cli",
+    "environment",
+    "variable",
+    "windows",
+    "unix"
+  ],
+  "scripts": {
+    "test": "standard && mocha"
+  },
+  "bin": {
+    "with-vars": "./cli.js"
+  },
+  "dependencies": {
+    "cross-spawn-async": "^2.1.1",
+    "yargs": "^3.31.0"
+  },
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "mocha": "^2.3.4",
+    "standard": "^5.4.1"
+  }
+}
